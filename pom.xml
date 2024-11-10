@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <artifactId>hello-checkstyle</artifactId>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.springframework.boot</groupId>
+      </plugin>
+      <plugin>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <configuration>
+          <configLocation>google_checks.xml</configLocation>
+          <suppressionsLocation>checkstyle/sup.xml</suppressionsLocation>
+          <!--          <configLocation>checkstyle/checkstyle.xml</configLocation>-->
+          <consoleOutput>true</consoleOutput>
+          <encoding>utf-8</encoding>
+          <failsOnError>false</failsOnError>
+          <failOnViolation>true</failOnViolation>
+          <includeTestResources>true</includeTestResources>
+          <includeTestSourceDirectory>true</includeTestSourceDirectory>
+          <violationSeverity>warning</violationSeverity>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <id>validate</id>
+            <phase>validate</phase>
+          </execution>
+        </executions>
+        <groupId>org.apache.maven.plugins</groupId>
+        <version>3.6.0</version>
+      </plugin>
+    </plugins>
+  </build>
+  <dependencies>
+    <dependency>
+      <artifactId>spring-boot-starter</artifactId>
+      <groupId>org.springframework.boot</groupId>
+    </dependency>
+
+    <dependency>
+      <artifactId>spring-boot-starter-test</artifactId>
+      <groupId>org.springframework.boot</groupId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+  <description>testing check style mvn plugin</description>
+  <developers>
+    <developer/>
+  </developers>
+  <groupId>com.adiaz</groupId>
+  <licenses>
+    <license/>
+  </licenses>
+  <modelVersion>4.0.0</modelVersion>
+  <name>hello-checkstyle</name>
+  <parent>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <groupId>org.springframework.boot</groupId>
+    <relativePath/>
+    <version>3.3.5</version> <!-- lookup parent from repository -->
+  </parent>
+  <properties>
+    <java.version>17</java.version>
+  </properties>
+  <scm>
+    <connection/>
+    <developerConnection/>
+    <tag/>
+    <url/>
+  </scm>
+  <url/>
+
+  <version>0.0.1-SNAPSHOT</version>
+
+</project>
